@@ -1,0 +1,17 @@
+@import "loading-text";
+
+
+.loaders {
+    display: grid;
+    grid-template: repeat(3, 1fr) / repeat(3, 1fr);
+}
+
+.loader {
+    width: 500px;
+    aspect-ratio: 1/1;
+    background-color: darkslategray;
+    margin: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
