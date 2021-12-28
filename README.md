@@ -1,1 +1,2 @@
-# loaders
+# Repozytorium z różnymi animowanymi loaderkami
+
