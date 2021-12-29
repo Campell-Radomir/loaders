@@ -1,0 +1,83 @@
+$triangle-size: 50px;
+$circle-width: 150px;
+$anim-duration: 2s;
+
+.circle {
+    width: $circle-width;
+    aspect-ratio: 1/1;
+    border: 5px orangered solid;
+    display: grid;
+    border-radius: 50%;
+    animation-duration: $anim-duration;
+    animation-iteration-count: infinite;
+    // transform-origin: width;
+
+    &:hover {
+        animation-timing-function: ease;
+        animation-name: scaling_circle;
+        // animation: scaling_circle 2s ease 0s infinite normal none;
+        .circle__triangle {
+            animation-timing-function: ease-in-out;
+            animation-name: spinning_triangle;
+        }
+    }
+    
+}
+
+@keyframes scaling_circle {
+    0%, 100% {
+        // width: $circle-width;
+        transform: scale(1);
+        border-color: orangered;
+    }
+
+    33% {
+        border-color: lime;
+    }
+
+    50% {
+        // width: $circle-width + 100px;
+        transform: scale(1.5);
+        border-width: 25px;
+    }
+
+    66% {
+        border-color: skyblue;
+    }
+}
+
+
+.circle__triangle {
+    width: 0px;
+    height: 0px;
+    margin: auto;
+    border-left: $triangle-size orangered solid;
+    border-top: $triangle-size transparent solid;
+    border-bottom: $triangle-size transparent solid;
+    animation-duration: $anim-duration;
+    animation-iteration-count: infinite;
+    &:hover {
+        animation-timing-function: ease-in-out;
+        animation-name: spinning_triangle;
+    }
+}
+
+
+
+@keyframes spinning_triangle {
+    0% {
+        transform: rotate(0deg);
+        border-left-color: orangered;
+    }
+
+    33% {
+        border-left-color: lime;
+    }
+
+    66% {
+        border-left-color: skyblue;
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}

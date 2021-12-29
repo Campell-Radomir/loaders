@@ -2,7 +2,7 @@
   font-size: 5rem; }
   .loading-text::after {
     content: '';
-    animation: after--reversal-dots 8s ease-in-out 0s infinite normal none; }
+    animation: after-reversal-dots 8s ease-in-out 0s infinite normal none; }
 
 @keyframes after-reversal-dots {
   0%,100% {
@@ -19,6 +19,55 @@
   50% {
     opacity: 1;
     content: '...'; } }
+.circle {
+  width: 150px;
+  aspect-ratio: 1/1;
+  border: 5px orangered solid;
+  display: grid;
+  border-radius: 50%;
+  animation-duration: 2s;
+  animation-iteration-count: infinite; }
+  .circle:hover {
+    animation-timing-function: ease;
+    animation-name: scaling_circle; }
+    .circle:hover .circle__triangle {
+      animation-timing-function: ease-in-out;
+      animation-name: spinning_triangle; }
+
+@keyframes scaling_circle {
+  0%, 100% {
+    transform: scale(1);
+    border-color: orangered; }
+  33% {
+    border-color: lime; }
+  50% {
+    transform: scale(1.5);
+    border-width: 25px; }
+  66% {
+    border-color: skyblue; } }
+.circle__triangle {
+  width: 0px;
+  height: 0px;
+  margin: auto;
+  border-left: 50px orangered solid;
+  border-top: 50px transparent solid;
+  border-bottom: 50px transparent solid;
+  animation-duration: 2s;
+  animation-iteration-count: infinite; }
+  .circle__triangle:hover {
+    animation-timing-function: ease-in-out;
+    animation-name: spinning_triangle; }
+
+@keyframes spinning_triangle {
+  0% {
+    transform: rotate(0deg);
+    border-left-color: orangered; }
+  33% {
+    border-left-color: lime; }
+  66% {
+    border-left-color: skyblue; }
+  100% {
+    transform: rotate(360deg); } }
 .loaders {
   display: grid;
   grid-template: repeat(3, 1fr)/repeat(3, 1fr); }
