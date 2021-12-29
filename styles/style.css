@@ -68,6 +68,27 @@
     border-left-color: skyblue; }
   100% {
     transform: rotate(360deg); } }
+.disapearing-box {
+  width: 0;
+  height: 0;
+  border: 50px #808080 solid;
+  border-top-color: #707070;
+  border-bottom-color: #707070;
+  animation: disapearing-box 4s ease-in-out infinite; }
+
+@keyframes disapearing-box {
+  0%,100% {
+    border-bottom-color: #707070;
+    border-left-color: transparent; }
+  25% {
+    border-left-color: #808080;
+    border-top-color: transparent; }
+  50% {
+    border-top-color: #707070;
+    border-right-color: transparent; }
+  75% {
+    border-right-color: #808080;
+    border-bottom-color: transparent; } }
 .loaders {
   display: grid;
   grid-template: repeat(3, 1fr)/repeat(3, 1fr); }
