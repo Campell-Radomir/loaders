@@ -89,6 +89,9 @@
   75% {
     border-right-color: #808080;
     border-bottom-color: transparent; } }
+body {
+  background: #020024; }
+
 .loaders {
   display: grid;
   grid-template: repeat(3, 1fr)/repeat(3, 1fr); }
@@ -96,7 +99,7 @@
 .loader {
   width: 500px;
   aspect-ratio: 1/1;
-  background-color: darkslategray;
+  background: linear-gradient(to left top, #00dae1 0%, #090979 30% 60%, #00dae1 100%), linear-gradient(black, black);
   margin: 25px;
   display: flex;
   justify-content: center;

@@ -2,6 +2,9 @@
 @import "circled-triangle";
 @import "disapearing-box";
 
+body {
+    background: rgb(2,0,36);
+}
 
 .loaders {
     display: grid;
@@ -11,7 +14,10 @@
 .loader {
     width: 500px;
     aspect-ratio: 1/1;
-    background-color: darkslategray;
+    background: 
+            linear-gradient(to left top, rgba(0,218,225,1) 0%, rgba(9,9,121,1) 30% 60%,rgba(0,218,225,1) 100%),
+            linear-gradient(rgba(0,0,0,1), rgba(0,0,0,1));
+    // background-color: slategrey;
     margin: 25px;
     display: flex;
     justify-content: center;
