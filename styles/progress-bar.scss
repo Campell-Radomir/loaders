@@ -1,0 +1,31 @@
+.progress {
+
+    width: 75%;
+    height: 2vmax;
+    background: #aaa;
+    border-radius: 1vmax;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.25) inset;
+    
+    & > .progress-bar {
+        width: 10%;
+        height: 100%;
+        border-radius: 1vmax;
+        animation: progress-bar-forward-backward 2.5s ease-in-out infinite;
+    }
+}
+
+@keyframes progress-bar-forward-backward {
+    0% {
+        width: 0%;
+        background: linear-gradient(to right,rgba(0, 0, 255, 0.7), rgba(255,0,0, 0.7) 100%);
+    }
+
+    50% {
+        width: 100%;
+    }
+
+    100% {
+        background: linear-gradient(to left,rgba(0, 0, 255, 0.7), rgba(255,0,0, 0.7));
+        width: 0%
+    }
+}
