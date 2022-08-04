@@ -89,6 +89,45 @@
   75% {
     border-right-color: #808080;
     border-bottom-color: transparent; } }
+.circling-lines, .circling-lines--colorful {
+  width: 16vmax;
+  aspect-ratio: 1/1;
+  border-right: 4px solid #fc0a0a;
+  border-radius: 100%;
+  animation: circling-lines-right 1s linear infinite; }
+  .circling-lines::before, .circling-lines--colorful::before, .circling-lines::after, .circling-lines--colorful::after {
+    content: '';
+    width: 14vmax;
+    aspect-ratio: 1/1;
+    border-right: 3px solid #fc0a0a;
+    border-radius: 100%;
+    position: absolute;
+    top: calc(50% - (14vmax / 2));
+    left: calc(50% - (14vmax / 2));
+    animation: circling-lines-left 1s linear infinite; }
+  .circling-lines::after, .circling-lines--colorful::after {
+    width: 12vmax;
+    top: calc(50% - (12vmax / 2));
+    left: calc(50% - (12vmax / 2));
+    animation: circling-lines-right 1s linear infinite;
+    border-right-width: 2px; }
+  .circling-lines--colorful {
+    border-right-color: #f00; }
+    .circling-lines--colorful::before {
+      border-right-color: #0f0; }
+    .circling-lines--colorful::after {
+      border-right-color: #00f; }
+
+@keyframes circling-lines-left {
+  from {
+    transform: rotate(0deg); }
+  to {
+    transform: rotate(720deg); } }
+@keyframes circling-lines-right {
+  from {
+    transform: rotate(360deg); }
+  to {
+    transform: rotate(0deg); } }
 body {
   background: #020024; }
 

@@ -1,0 +1,56 @@
+$circle-size: 16vmax;
+$middle-circle-size: $circle-size - 2vmax;
+$small-circle-size: $middle-circle-size - 2vmax;
+
+.circling-lines {
+
+    width: $circle-size;
+    aspect-ratio: 1/1;
+    border-right: 4px solid #fc0a0a;
+    border-radius: 100%;
+    animation: circling-lines-right 1s linear infinite;
+    &::before,&::after {
+        content: '';
+        width: $middle-circle-size;
+        aspect-ratio: 1/1;
+        border-right: 3px solid #fc0a0a;
+        border-radius: 100%;
+        position: absolute;
+        // top: calc(50% - $middle-circle-size / 2);
+        // left: calc(50% - $middle-circle-size / 2);
+        top: calc(50% - (#{$middle-circle-size} / 2));
+        left: calc(50% - (#{$middle-circle-size} / 2));
+        animation: circling-lines-left 1s linear infinite;
+    }
+
+    &::after {
+        width: $small-circle-size;
+        top: calc(50% - (#{$small-circle-size} / 2));
+        left: calc(50% - (#{$small-circle-size} / 2));
+        animation: circling-lines-right 1s linear infinite;
+        border-right-width: 2px;
+    }
+
+    &--colorful {
+        @extend .circling-lines;
+
+        border-right-color: #f00;
+        &::before {
+            border-right-color: #0f0;
+        }
+        &::after {
+            border-right-color: #00f;
+        }
+    }
+}
+
+
+@keyframes circling-lines-left {
+    from {transform:rotate(0deg);}
+    to {transform:rotate(720deg);}
+}
+
+@keyframes circling-lines-right {
+    from {transform:rotate(360deg);}
+    to {transform:rotate(0deg);}
+}
