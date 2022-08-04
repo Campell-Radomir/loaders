@@ -16,8 +16,6 @@ $small-circle-size: $middle-circle-size - 2vmax;
         border-right: 3px solid #fc0a0a;
         border-radius: 100%;
         position: absolute;
-        // top: calc(50% - $middle-circle-size / 2);
-        // left: calc(50% - $middle-circle-size / 2);
         top: calc(50% - (#{$middle-circle-size} / 2));
         left: calc(50% - (#{$middle-circle-size} / 2));
         animation: circling-lines-left 1s linear infinite;
